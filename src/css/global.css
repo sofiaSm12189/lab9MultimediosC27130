@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --ucr-azul: #1a3a6b;
+  --ucr-azul-oscuro: #0f2444;
+  --ucr-azul-fila-a: #1e4a82;
+  --ucr-azul-fila-b: #193d72;
+  --ucr-blanco: #ffffff;
+  --ucr-gris-señal: #b8b8b0;
+  --sombra: 0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #bfc5cc;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-principal {
+  max-width: 1050px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.poster-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+.poster-card {
+  width: 500px;
+  min-height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.afiche {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--sombra);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.afiche:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+}
+
+.afiche-contenido {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* =====================================================
+   PRIMER AFICHE — FONDO DORADO
+   ===================================================== */
+.afiche-izquierdo {
+  background: linear-gradient(170deg, #e8a800 0%, #c98900 55%, #b87800 100%);
+}
+
+.afiche-izquierdo .afiche-contenido {
+  padding: 1.8rem 1.8rem 1.4rem;
+  min-height: 620px;
+  justify-content: space-between;
+}
+
+.encabezado-ucr {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.logo-ucr {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.escudo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-imagen {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.raya-decorativa {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), transparent);
+  border-radius: 2px;
+}
+
+.titulo-principal {
+  text-align: center;
+  line-height: 1;
+  padding: 0.5rem 0;
+}
+
+.la-sede {
+  font-family: "Anton", sans-serif;
+  font-size: 4.4rem;
+  color: var(--ucr-blanco);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s ease;
+}
+
+.acompana {
+  font-family: "Anton", sans-serif;
+  font-size: 3.8rem;
+  color: var(--ucr-blanco);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s ease;
+}
+
+.afiche-izquierdo:hover .la-sede {
+  transform: translateX(8px);
+}
+.afiche-izquierdo:hover .acompana {
+  transform: translateX(-8px);
+}
+
+/* Zona donde va la FOTO REAL de las personas */
+.zona-personas {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  margin: 0.8rem 0;
+  min-height: 240px;
+  /* Fondo sutil mientras no hay imagen */
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.imagen-personas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.mensaje-central {
+  text-align: center;
+  padding: 0.7rem 1.2rem;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  margin: 0.4rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.frase-fuerte {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ucr-blanco);
+  margin-bottom: 0.3rem;
+}
+
+.frase-accion {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ucr-blanco);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.28);
+}
+
+.footer-ucr {
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.logos-repetidos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.logo-footer-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease;
+}
+.logo-footer-img:hover {
+  transform: translateY(-3px) scale(1.12);
+}
+
+.logo-footer-sg {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 3px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* =====================================================
+   SEGUNDO AFICHE — SEÑAL DIRECCIONAL
+   ===================================================== */
+.afiche-derecho {
+  background: var(--ucr-azul-oscuro);
+  border: 4px solid #0a1c36;
+  border-radius: 8px;
+}
+
+.afiche-derecho .afiche-contenido {
+  padding: 0;
+}
+.afiche-derecho .encabezado-ucr {
+  display: none;
+}
+
+.grid-ubicaciones {
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-ubicacion {
+  padding: 1.15rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tarjeta-ubicacion:last-child {
+  border-bottom: none;
+}
+.tarjeta-ubicacion:nth-child(odd) {
+  background: #1e4a82;
+}
+.tarjeta-ubicacion:nth-child(even) {
+  background: #193d72;
+}
+.tarjeta-ubicacion:hover {
+  background: #2a5a9a;
+}
+
+.tarjeta-ubicacion::after {
+  content: "→";
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ucr-blanco);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.tarjeta-ubicacion:hover::after {
+  transform: translateX(5px);
+}
+
+.nombre-ubicacion {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ucr-blanco);
+  letter-spacing: 0.4px;
+  flex: 1;
+}
+
+.tarjeta-destacada {
+  background: #193d72;
+}
+
+.icono-ubicacion {
+  display: none;
+}
+.efecto-hover {
+  display: none;
+}
+
+.footer-ucr-derecho {
+  background: var(--ucr-gris-señal);
+  padding: 0.85rem 1.5rem;
+  text-align: center;
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.logo-grande {
+  display: inline-block;
+}
+
+.ucr-grande-img {
+  width: 70px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.ucr-texto-footer {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: var(--ucr-azul);
+}
+
+.decoracion-1,
+.decoracion-2,
+.decoracion-3,
+.decoracion-4 {
+  display: none;
+}
+
+/* Animación entrada */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.afiche-izquierdo {
+  animation: slideUp 0.5s ease-out both;
+}
+.afiche-derecho {
+  animation: slideUp 0.5s ease-out 0.15s both;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+  .la-sede {
+    font-size: 3.4rem;
+  }
+  .acompana {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  .la-sede {
+    font-size: 2.6rem;
+  }
+  .acompana {
+    font-size: 2.3rem;
+  }
+  .frase-accion {
+    font-size: 1.4rem;
+  }
+}
+
+poster-campaign,
+direction-poster {
+  display: block;
+}
+
+location-card {
+  display: block;
+}
